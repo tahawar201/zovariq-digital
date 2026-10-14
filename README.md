@@ -1,29 +1,21 @@
-# Zovariq Digital — premium agency website (v3)
+# ZOVARIQ DIGITAL — Premium V10 (WhatsApp & Email Connected)
 
-## Preview
-Open `index.html` in Chrome, Firefox, Safari or Edge. No dependencies, build tools or paid subscriptions needed.
+## Included contact details
+- WhatsApp: +92 318 7067972 (`https://wa.me/923187067972`)
+- Email: tahawarabbas76@gmail.com (`mailto:`)
 
-## Before publishing
-- Replace `your-business-email@example.com` in `index.html` with your real agency email.
-- Update the portfolio descriptions and add verified case studies, proof and client consent as appropriate. Concept projects are clearly labelled.
-- Confirm brand/domain/trademark availability. This website does not establish ownership of the name.
-- Add an actual domain URL to the JSON-LD schema after publishing and create a sitemap at that point.
+## What works
+- Floating WhatsApp and email icon buttons, visible on desktop and mobile
+- WhatsApp and email links in the contact section and footer
+- Project enquiry form with two working choices: **Continue on WhatsApp** or **Compose an email**. On click, the browser opens the chosen messaging app and pre-fills the visitor's name, email, company, service and project details. The visitor must then press **Send**.
+- Service card enquiry buttons preselect the corresponding service.
 
-## Publish free to GitHub Pages
-1. Create a public GitHub repository, e.g. `zovariq-digital`.
-2. Upload `index.html`, `styles.css`, `script.js`, and `favicon.svg` into the repository root.
-3. In repository Settings → Pages → Build and deployment, choose Deploy from a branch, select `main` and `/ (root)`, then Save.
-4. Visit the URL GitHub displays once Pages deployment completes.
-5. Submit that URL to Google Search Console; indexing is not guaranteed.
+## Limitation (important)
+This is a static GitHub Pages website. Form enquiries are **not submitted to a server**, and this site does not store leads or send messages automatically. Visitors need WhatsApp or an email application to send the prepared enquiry. Email apps and browser pop-up settings may affect what opens. An automatic inbox submission requires a separate form backend or service.
 
-## Accessibility
-Mobile responsive, keyboard skip link, text labels, reduced-motion preferences and semantic sections.
+## Preview and publishing
+Unzip and open `index.html` for a preview. Keep all files together: `index.html`, `styles.css`, `script.js`, `zovariq-logo.png`, `favicon.svg` and `README.md`.
 
-## Performance & stability (v4)
-- No external images, CSS frameworks, font requests, video embeds, trackers or JavaScript libraries.
-- Progressive enhancement: all text stays visible when JavaScript is disabled or errors.
-- Scroll reveals use IntersectionObserver once per visible element and stop observing afterwards.
-- Respects reduced-motion preferences; no expensive scroll handlers or looping JavaScript timers.
-- CSS illustrations avoid downloading large photos or background videos.
-- Contact email is a placeholder and must be replaced before launch.
-- This is a static brochure/portfolio site, not a hosting uptime guarantee. Test on target devices and run Lighthouse after deployment.
+To update your current live website: visit `https://github.com/tahawar201/zovariq-digital`, choose **Add file → Upload files**, upload the extracted six files into the repository root (not the ZIP), and click **Commit changes**. GitHub Pages redeploys automatically from `main` / `(root)`.
+
+Before public promotion, test WhatsApp and email on your phone and check the page at different widths.
