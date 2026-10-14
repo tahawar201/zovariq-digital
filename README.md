@@ -1,21 +1,36 @@
-# ZOVARIQ DIGITAL — Premium V10 (WhatsApp & Email Connected)
+# Zovariq Digital — AI Automation & Digital Marketing
 
-## Included contact details
-- WhatsApp: +92 318 7067972 (`https://wa.me/923187067972`)
-- Email: tahawarabbas76@gmail.com (`mailto:`)
+**Official website:** [Visit Zovariq Digital](https://tahawar201.github.io/zovariq-digital/)
 
-## What works
-- Floating WhatsApp and email icon buttons, visible on desktop and mobile
-- WhatsApp and email links in the contact section and footer
-- Project enquiry form with two working choices: **Continue on WhatsApp** or **Compose an email**. On click, the browser opens the chosen messaging app and pre-fills the visitor's name, email, company, service and project details. The visitor must then press **Send**.
-- Service card enquiry buttons preselect the corresponding service.
+Zovariq Digital offers AI automation and digital growth services to businesses seeking more efficient workflows, clearer customer communication and stronger online content. The website is a lightweight, responsive GitHub Pages project.
 
-## Limitation (important)
-This is a static GitHub Pages website. Form enquiries are **not submitted to a server**, and this site does not store leads or send messages automatically. Visitors need WhatsApp or an email application to send the prepared enquiry. Email apps and browser pop-up settings may affect what opens. An automatic inbox submission requires a separate form backend or service.
+## Our services
 
-## Preview and publishing
-Unzip and open `index.html` for a preview. Keep all files together: `index.html`, `styles.css`, `script.js`, `zovariq-logo.png`, `favicon.svg` and `README.md`.
+- AI agents and business workflow automation
+- AI chatbots and receptionist solutions
+- Digital marketing strategy and campaigns
+- Social media management
+- Webinar and podcast content repurposing
+- DM and community management
+- Video editing and content creation
 
-To update your current live website: visit `https://github.com/tahawar201/zovariq-digital`, choose **Add file → Upload files**, upload the extracted six files into the repository root (not the ZIP), and click **Commit changes**. GitHub Pages redeploys automatically from `main` / `(root)`.
+**Explore services:** [Our digital services](https://tahawar201.github.io/zovariq-digital/#services)  
+**Discuss a project:** [Contact Zovariq Digital](https://tahawar201.github.io/zovariq-digital/#contact)
 
-Before public promotion, test WhatsApp and email on your phone and check the page at different widths.
+## How the website works
+
+The site uses static HTML, CSS and JavaScript, with no paid hosting or heavy animation framework. Enquiries open WhatsApp or an email client with prefilled project details: visitors must review and send their message themselves. The contact form **does not** store or deliver messages to a backend automatically.
+
+For business enquiries, use the contact options on the website.
+
+## Search and indexing
+
+- [XML sitemap](https://tahawar201.github.io/zovariq-digital/sitemap.xml)
+- [AI automation guide](https://tahawar201.github.io/zovariq-digital/ai-receptionist-guide.html)
+- [Webinar repurposing guide](https://tahawar201.github.io/zovariq-digital/webinar-repurposing-guide.html)
+
+Content guides are educational; examples are illustrative and are not claims about existing client results.
+
+## Maintainers
+
+This repository hosts the public website for Zovariq Digital. Please keep the Google Search Console verification file in the repository root to retain ownership verification.
