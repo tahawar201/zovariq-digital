@@ -147,3 +147,18 @@
 .booking-cta:focus-visible{outline:3px solid #90b9ff;outline-offset:3px}
 @media(max-width:650px){.booking-cta-hero{width:100%;justify-content:flex-start}.booking-cta{min-height:62px;padding:11px 14px}.booking-cta-copy strong{font-size:.91rem}}
 @media(prefers-reduced-motion:reduce){.booking-cta{transition:none}.booking-cta:hover{transform:none}}
+
+/* ZOVARIQ statement booking cards: neon-edge, dark glass, premium motion */
+.booking-cta-futuristic{position:relative;overflow:hidden;min-height:84px;padding:16px 21px;border:1px solid rgba(125,166,255,.48);border-radius:20px;background:radial-gradient(circle at 4% 0%,rgba(89,125,255,.42),transparent 45%),linear-gradient(120deg,#09162f 0%,#152c61 65%,#0c1732 100%);color:#fff!important;box-shadow:0 17px 40px rgba(12,31,83,.24),inset 0 1px 0 rgba(255,255,255,.14);gap:15px;transform:translateZ(0)}
+.booking-cta-futuristic:before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(120deg,rgba(129,196,255,.92),rgba(109,111,255,.18) 50%,rgba(103,244,255,.78));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.booking-cta-futuristic:after{content:"";position:absolute;top:-90%;left:-42%;width:34%;height:290%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transform:rotate(24deg);transition:left .6s ease;pointer-events:none}
+.booking-cta-futuristic:hover:after{left:125%}
+.booking-cta-futuristic .booking-icon{width:27px;height:27px;filter:drop-shadow(0 0 7px rgba(91,199,255,.9));color:#a3e6ff}
+.booking-cta-futuristic .booking-cta-copy strong{font-size:1.05rem;letter-spacing:-.03em;font-weight:850}
+.booking-cta-futuristic .booking-cta-copy small{font-size:.65rem;letter-spacing:.12em;font-weight:750;color:#b6d7ff;opacity:1}
+.booking-cta-futuristic .booking-cta-arrow{display:grid;place-items:center;flex:0 0 34px;height:34px;border-radius:50%;background:rgba(143,202,255,.14);border:1px solid rgba(153,210,255,.33);font-size:1.3rem;color:#b6efff;transition:transform .25s ease,background .25s ease}
+.booking-cta-futuristic:hover,.booking-cta-futuristic:focus-visible{transform:translateY(-5px);border-color:#a7e7ff;box-shadow:0 23px 49px rgba(28,80,185,.34),0 0 25px rgba(77,146,255,.17)}
+.booking-cta-futuristic:hover .booking-cta-arrow{transform:rotate(45deg);background:rgba(143,202,255,.27)}
+.booking-cta-contact.booking-cta-futuristic{width:100%}
+@media(max-width:650px){.booking-cta-futuristic{width:100%;min-height:78px;padding:14px 16px}.booking-cta-futuristic .booking-cta-copy strong{font-size:.97rem}.booking-cta-futuristic .booking-cta-copy small{font-size:.59rem;letter-spacing:.08em}}
+@media(prefers-reduced-motion:reduce){.booking-cta-futuristic:after,.booking-cta-futuristic .booking-cta-arrow{transition:none}}
