@@ -162,3 +162,21 @@
 .booking-cta-contact.booking-cta-futuristic{width:100%}
 @media(max-width:650px){.booking-cta-futuristic{width:100%;min-height:78px;padding:14px 16px}.booking-cta-futuristic .booking-cta-copy strong{font-size:.97rem}.booking-cta-futuristic .booking-cta-copy small{font-size:.59rem;letter-spacing:.08em}}
 @media(prefers-reduced-motion:reduce){.booking-cta-futuristic:after,.booking-cta-futuristic .booking-cta-arrow{transition:none}}
+
+/* Approved vibrant action treatment: existing V9 layout and functionality preserved */
+.vibrant-action{position:relative;overflow:hidden;isolation:isolate;border-radius:15px;font-weight:800;letter-spacing:-.015em;transition:transform .22s ease,box-shadow .22s ease,filter .22s ease,border-color .22s ease}
+.vibrant-action:before{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:linear-gradient(105deg,transparent 15%,rgba(255,255,255,.24) 47%,transparent 75%);transform:translateX(-140%);transition:transform .6s ease}
+.vibrant-action:hover:before{transform:translateX(140%)}
+.vibrant-action:hover,.vibrant-action:focus-visible{transform:translateY(-3px);filter:saturate(1.1)}
+.vibrant-action-primary{background:linear-gradient(115deg,#1148dd 0%,#4c48ee 58%,#9237f7 100%);border-color:#798cff;color:#fff;box-shadow:0 10px 25px rgba(70,74,230,.28),0 0 0 1px rgba(134,166,255,.25)}
+.vibrant-action-primary:hover{box-shadow:0 15px 35px rgba(82,68,238,.38),0 0 22px rgba(104,111,255,.28)}
+.vibrant-action-secondary{background:linear-gradient(130deg,#e8f6ff,#f2efff);border:1px solid #9cbaf7;color:#183e91;box-shadow:0 9px 22px rgba(45,100,207,.13)}
+.vibrant-action-secondary:hover{background:linear-gradient(130deg,#d9f3ff,#e5dcff);box-shadow:0 14px 28px rgba(45,100,207,.23)}
+.vibrant-action-light{background:linear-gradient(110deg,#fff,#e6f5ff);border:1px solid #8ed9ff;color:#133b87;box-shadow:0 10px 25px rgba(0,14,48,.17)}
+.vibrant-action-whatsapp{background:linear-gradient(120deg,#0a9865,#06c68e)!important;border:1px solid #5ce7bd!important;color:#fff!important;box-shadow:0 10px 24px rgba(0,165,117,.25)}
+.vibrant-action-email{background:linear-gradient(115deg,#ffdf86,#ffab39)!important;border:1px solid #fbd178!important;color:#583314!important;box-shadow:0 10px 24px rgba(210,125,24,.23)}
+.vibrant-action-whatsapp:hover{box-shadow:0 15px 30px rgba(0,165,117,.34)}
+.vibrant-action-email:hover{box-shadow:0 15px 30px rgba(210,125,24,.32)}
+.vibrant-nav-action{background:linear-gradient(115deg,#143d9b,#6238d7);border:1px solid rgba(142,180,255,.5);box-shadow:0 8px 20px rgba(65,77,191,.18);transition:transform .22s ease,box-shadow .22s ease}
+.vibrant-nav-action:hover{transform:translateY(-2px);box-shadow:0 12px 27px rgba(65,77,191,.29)}
+@media(prefers-reduced-motion:reduce){.vibrant-action,.vibrant-action:before,.vibrant-nav-action{transition:none}.vibrant-action:hover,.vibrant-nav-action:hover{transform:none}}
