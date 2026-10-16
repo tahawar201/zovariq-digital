@@ -206,3 +206,13 @@
 .z-service-card:hover .z-icon{transform:translateY(-5px) rotate(-3deg);box-shadow:0 23px 46px rgba(0,0,0,.22)}
 .z-service-card:focus-within{border-color:#7299ee;box-shadow:0 20px 55px rgba(37,75,170,.16)}
 @media(prefers-reduced-motion:reduce){.z-service-details summary,.z-details-arrow,.z-service-visual .z-icon{transition:none}.z-service-card:hover .z-icon{transform:none}}
+
+
+/* October clarity pass: purposeful hierarchy, fewer competing actions */
+.hero .actions{align-items:center;gap:15px}.hero-desc{max-width:670px}
+.z-services-head>p{max-width:390px}
+.z-service-body>p:not(.z-service-note){min-height:0!important;font-size:1rem;line-height:1.7}
+.z-service-card .z-service-link{align-self:flex-start;margin-top:auto}
+.z-service-body{gap:0}
+.z-service-number{opacity:.72}
+@media(max-width:650px){.hero .actions{flex-direction:column;align-items:stretch}.hero .actions>a{width:100%;justify-content:center}.z-service-card .z-service-link{width:100%;justify-content:center}}
