@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tahawar201.github.io/zovariq-digital/sitemap.xml
