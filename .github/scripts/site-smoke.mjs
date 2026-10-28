@@ -40,6 +40,12 @@ async function auditViewport(label, viewport, isMobile) {
     assert.ok(composed.includes(phrase), label + ': missing enquiry detail: ' + phrase);
   }
   assert.match(await page.locator('#formStatus').innerText(), /WhatsApp will open/);
+  // Verify the second enquiry button's user-facing flow without sending mail.
+  await page.locator('button[value="email"]').click();
+  assert.match(await page.locator('#formStatus').innerText(), /Your email app will open/, label + ': email compose flow');
+  // Verify multi-service CTA preselects the right option.
+  await page.locator('.z-services-bottom [data-service="Multiple services"]').click();
+  assert.equal(await page.locator('#serviceSelect').inputValue(), 'Multiple services', label + ': service preselection');
   await page.screenshot({ path: 'smoke-' + label + '.png', fullPage: true });
   const sizes = await page.evaluate(() => ({
     viewport: innerWidth,
