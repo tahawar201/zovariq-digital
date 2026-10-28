@@ -11,7 +11,7 @@
 - The reviewed website code contains no first-party analytics pixel, Google Analytics script or visitor-tracking SDK; external providers may separately process technical information.
 
 ## Blocking factual checks before publishing
-1. **Controller identity.** Sole owner/operator role confirmed. The owner confirms **Tahawar Abbas** as the legal name on their CNIC (user-attested; the brand is not a separate registered legal entity). Confirm the privacy contact email and a reliable, appropriate contact/correspondence address. Do not publicise an unapproved residential address.
+1. **Controller identity and location.** Sole owner/operator role confirmed. The owner confirms **Tahawar Abbas** as the legal name on their CNIC (user-attested; the brand is not a separate registered legal entity). The user also authorised the general business location **Jhang, Punjab, Pakistan** for public use; this is a city and province, not a complete postal address. Confirm the privacy contact email and a reliable, appropriate postal/correspondence contact method if required. Do not publicise an unapproved residential address.
 2. **Retention and deletion.** Decide *and implement* periods/criteria across Gmail, WhatsApp, Google Calendar bookings, any CRM, exports and backups. Suggested initial operational choice for enquiries that do not become clients: review/delete after **90 days of no activity**, unless there is a documented need to keep them. This is a **proposal only**, not a fact or legal requirement; a different defensible period is acceptable. For contracts/financial records, set criteria based on actual obligations and circumstances. Record how to perform erasure after a verified request.
 3. **Who has access?** Confirm whether only the operator can read the Gmail, WhatsApp, Google bookings and whether employees, assistants, contractors, integration tools or automated CRMs can access customer information. Confirm provider names; check connected service roles where applicable.
 4. **UK applicability and representative.** UK clients are an explicit target. Assess whether UK GDPR applies to this particular data processing and whether the UK representative rule is triggered. An overseas controller does *not* get an automatic exemption merely for being small or unregistered. The low-risk *occasional* exception requires factual support; repeated enquiry processing as an ordinary business activity may not be occasional. Obtain qualified advice when unsure.
@@ -27,7 +27,7 @@
 | Pakistan-based, unregistered status | User-confirmed |
 | Operator sole ownership / personal data decisions | USER-CONFIRMED |
 | Full legal name spelling: Tahawar Abbas | USER-CONFIRMED (matches CNIC by owner's statement) |
-| Suitable correspondence address | NOT CONFIRMED |
+| Business city: Jhang, Punjab, Pakistan | USER-CONFIRMED for public disclosure |\n| Full postal/correspondence address (if required) | NOT PROVIDED; do not represent city as a full address |
 | Gmail/WhatsApp/Calendar retention | NOT CONFIRMED |
 | Additional processors / CRM access | NOT CONFIRMED |
 | UK representative obligation/exemption | NOT ASSESSED |
