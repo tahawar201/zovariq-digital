@@ -12,12 +12,12 @@ const warnings = [];
 const detail = [];
 const record = (ok, message) => { if (!ok) errors.push(message); };
 const match = (html, pattern) => html.match(pattern)?.[1] || null;
-const schemas = html => [...html.matchAll(/<script[^>]+type=["']application\\/ld\\+json["'][^>]*>([\\s\\S]*?)<\\/script>/gi)].map(m => JSON.parse(m[1]));
+const schemas = html => [...html.matchAll(/<script[^>]+type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)].map(m => JSON.parse(m[1]));
 const allNodes = js => js.flatMap(o => o['@graph'] || [o]);
 
 const fileSet = new Set(siteFiles.concat(['styles.css','service-pages.css','insights.css','script.js','favicon.svg','zovariq-logo.png','robots.txt','sitemap.xml']));
 const getLocal = (raw, current) => {
-  if (/^(mailto:|tel:|javascript:|data:|https?:|\\/\\/)/i.test(raw) || raw.startsWith('#')) return null;
+  if (/^(mailto:|tel:|javascript:|data:|https?:|\/\/)/i.test(raw) || raw.startsWith('#')) return null;
   const url = new URL(raw, BASE+current.replace('index.html',''));
   if (url.origin !== new URL(BASE).origin || !url.pathname.startsWith(new URL(BASE).pathname)) return null;
   const relative = decodeURI(url.pathname.slice(new URL(BASE).pathname.length));
@@ -25,10 +25,10 @@ const getLocal = (raw, current) => {
 };
 for (const filename of siteFiles) {
   const html = fs.readFileSync(filename, 'utf8');
-  const title = match(html, /<title>([^<]+)<\\/title>/i);
+  const title = match(html, /<title>([^<]+)<\/title>/i);
   const desc = match(html, /<meta[^>]*name=["']description["'][^>]*content=["']([^"']+)["']/i);
   const canonical = match(html, /<link[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["']/i);
-  const h1s = [...html.matchAll(/<h1(?:\\s[^>]*)?>([\\s\\S]*?)<\\/h1>/gi)];
+  const h1s = [...html.matchAll(/<h1(?:\s[^>]*)?>([\s\S]*?)<\/h1>/gi)];
   record(Boolean(title && title.trim().length>=15),filename+': title missing/very short');
   record(Boolean(desc && desc.trim().length>=70),filename+': description missing/very short');
   record(canonical === BASE+(filename==='index.html'?'':filename),filename+': canonical mismatch '+canonical);
@@ -67,7 +67,7 @@ for (const filename of siteFiles) {
 }
 
 const xml=fs.readFileSync('sitemap.xml','utf8');
-const locs=[...xml.matchAll(/<loc>([^<]+)<\\/loc>/g)].map(x=>x[1]);
+const locs=[...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map(x=>x[1]);
 const expected=siteFiles.map(p=>BASE+(p==='index.html'?'':p));
 record(locs.length===expected.length,'sitemap: expected '+expected.length+' URLs, found '+locs.length);
 record(new Set(locs).size===locs.length,'sitemap: duplicate URL');
