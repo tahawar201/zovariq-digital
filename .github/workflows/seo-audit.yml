@@ -36,5 +36,15 @@ jobs:
               if (!canonical) failed=true;
             }catch(e){failed=true;console.error(page+': '+e.message)}
           }
-          const originRobots='https://tahawar201.github.io/robots.txt';\n          try {\n            const r=await fetch(originRobots,{signal:AbortSignal.timeout(15000)});\n            const text=await r.text();\n            console.log(JSON.stringify({url:originRobots,http:r.status,authoritativeForProject:true,blanketDisallow:r.status===200 && /Disallow:\\s*\\/\\s*(?:\\n|$)/i.test(text)}));\n            if(r.ok && /Disallow:\\s*\\/\\s*(?:\\n|$)/i.test(text)) failed=true;\n          } catch(e) { console.log('Origin robots.txt could not be independently checked: '+e.message); }\n          if(failed) process.exit(1);
+          const originRobots='https://tahawar201.github.io/robots.txt';
+          try {
+            const r=await fetch(originRobots,{signal:AbortSignal.timeout(15000)});
+            const body=await r.text();
+            const blanketDisallow=r.status===200 && body.split(String.fromCharCode(10)).some(line=>line.trim().toLowerCase()==='disallow: /');
+            console.log(JSON.stringify({url:originRobots,http:r.status,authoritativeForProject:true,blanketDisallow}));
+            if(blanketDisallow) failed=true;
+          } catch(e) {
+            console.log('Origin robots.txt not independently verified: '+e.message);
+          }
+          if(failed) process.exit(1);
           NODE
