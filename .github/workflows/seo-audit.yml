@@ -1,0 +1,40 @@
+name: SEO, schema and GEO technical validation
+on:
+  pull_request:
+    paths:
+      - '*.html'
+      - 'sitemap.xml'
+      - 'robots.txt'
+      - '.github/scripts/seo-audit.mjs'
+      - '.github/workflows/seo-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  site-seo-audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate local URLs, titles, canonicals, structured data, sitemap and links
+        run: node .github/scripts/seo-audit.mjs
+      - name: Verify live key pages remain reachable (does not deploy changes)
+        run: |
+          node --input-type=module <<'NODE'
+          const pages=['','ai-automation.html','content-production.html','digital-marketing.html','social-media-management.html','ai-receptionist-guide.html','ai-receptionist-veterinary-practices-uk.html','ai-receptionist-letting-agents-uk.html','webinar-repurposing-guide.html'];
+          const base='https://tahawar201.github.io/zovariq-digital/';
+          let failed=false;
+          for (const page of pages) {
+            try {
+              const r=await fetch(base+page,{signal:AbortSignal.timeout(15000)});
+              const txt=await r.text();
+              const canonical=r.status===200 && txt.includes('<link rel="canonical" href="'+base+page+'"');
+              console.log(JSON.stringify({page:page||'homepage',http:r.status,canonicalMatches:canonical}));
+              if (!canonical) failed=true;
+            }catch(e){failed=true;console.error(page+': '+e.message)}
+          }
+          if(failed) process.exit(1);
+          NODE
