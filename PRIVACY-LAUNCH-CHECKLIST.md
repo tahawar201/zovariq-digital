@@ -4,14 +4,14 @@
 **Status:** Review only. `privacy.html` is marked `noindex,nofollow` and must not be merged/published with unresolved legal/operational facts.
 
 ## Confirmed from website source and user statement
-- ZOVARIQ DIGITAL operates from Pakistan and is currently **not a registered company**. The user confirmed they are the sole owner and personally manage the business, including enquiries. The name used for the owner in the draft is **Tahawar Abbas**; confirm that spelling matches their official legal name before publishing. Do not describe the business as a UK company, registered Pakistani limited company or claim a registration number.
+- ZOVARIQ DIGITAL operates from Pakistan and is currently **not a registered company**. The user confirmed they are the sole owner and personally manage the business, including enquiries. The owner has explicitly confirmed **Tahawar Abbas** is the exact English spelling on their CNIC; this is user-attested, not an independent ID check. Do not describe the business as a UK company, registered Pakistani limited company or claim a registration number.
 - The website enquiry form prepares WhatsApp or `mailto:` messages, but the page does not automatically submit visitor text to a website backend/database. Clicking Send in the external application is a separate user action.
 - Business contact links in code: `tahawarabbas76@gmail.com`, `wa.me/923187067972`.
 - Booking uses Google appointment scheduling; site hosting uses GitHub Pages.
 - The reviewed website code contains no first-party analytics pixel, Google Analytics script or visitor-tracking SDK; external providers may separately process technical information.
 
 ## Blocking factual checks before publishing
-1. **Controller identity.** Sole owner/operator role confirmed. Confirm that **Tahawar Abbas** is the exact legal name/spelling used on official identity records (the brand is not a separate registered legal entity). Confirm the privacy contact email and a reliable, appropriate contact/correspondence address. Do not publicise an unapproved residential address.
+1. **Controller identity.** Sole owner/operator role confirmed. The owner confirms **Tahawar Abbas** as the legal name on their CNIC (user-attested; the brand is not a separate registered legal entity). Confirm the privacy contact email and a reliable, appropriate contact/correspondence address. Do not publicise an unapproved residential address.
 2. **Retention and deletion.** Decide *and implement* periods/criteria across Gmail, WhatsApp, Google Calendar bookings, any CRM, exports and backups. Suggested initial operational choice for enquiries that do not become clients: review/delete after **90 days of no activity**, unless there is a documented need to keep them. This is a **proposal only**, not a fact or legal requirement; a different defensible period is acceptable. For contracts/financial records, set criteria based on actual obligations and circumstances. Record how to perform erasure after a verified request.
 3. **Who has access?** Confirm whether only the operator can read the Gmail, WhatsApp, Google bookings and whether employees, assistants, contractors, integration tools or automated CRMs can access customer information. Confirm provider names; check connected service roles where applicable.
 4. **UK applicability and representative.** UK clients are an explicit target. Assess whether UK GDPR applies to this particular data processing and whether the UK representative rule is triggered. An overseas controller does *not* get an automatic exemption merely for being small or unregistered. The low-risk *occasional* exception requires factual support; repeated enquiry processing as an ordinary business activity may not be occasional. Obtain qualified advice when unsure.
@@ -25,7 +25,8 @@
 | Question | Status |
 |---|---|
 | Pakistan-based, unregistered status | User-confirmed |
-| Operator sole ownership / personal data decisions | USER-CONFIRMED |\n| Full legal name spelling: Tahawar Abbas | Confirm against official identity before publication |
+| Operator sole ownership / personal data decisions | USER-CONFIRMED |
+| Full legal name spelling: Tahawar Abbas | USER-CONFIRMED (matches CNIC by owner's statement) |
 | Suitable correspondence address | NOT CONFIRMED |
 | Gmail/WhatsApp/Calendar retention | NOT CONFIRMED |
 | Additional processors / CRM access | NOT CONFIRMED |
