@@ -6,7 +6,7 @@
 
 ## Scope and verified baseline
 - Main branch: 9 HTML landing/service/guide URLs in sitemap.xml, all carrying self-canonical URLs and indexable robots meta.
-- The repository includes a permissive robots.txt under the project subpath, but **this is not an authoritative robots file** for Google: robots directives must be at the host origin, https://tahawar201.github.io/robots.txt. If the origin file is absent, crawling is normally permitted by default. Verify the origin separately; submit the sitemap in Search Console rather than trusting the subpath robots file.
+- The repository includes a permissive robots.txt under the project subpath, but **this is not an authoritative robots file** for Google: robots directives must be at the host origin, https://tahawar201.github.io/robots.txt. If the origin file is absent, crawling is normally permitted by default. Verified via GitHub Actions on 28 October 2026: origin-root robots URL returned HTTP 404, so the project subpath file is not used as the host robots policy; this does **not** on its own block crawling. Submit the sitemap in Search Console rather than trusting the subpath robots file.
 - Existing homepage JSON-LD: Organization and WebSite; four educational guide URLs: Article.
 - Gap identified: all four service pages lacked structured data and most share-preview metadata; four guides lacked breadcrumb structured data.
 - Connected Search Console via Windsor.ai (country-level, 13–27 October 2026): Pakistan 17 impressions/9 clicks, UAE 2/0, Germany 1/0, US 1/0, UK 0/0. Very small sample and branded US query: "zovariq". Some privacy-thresholded dimensions may be omitted.
