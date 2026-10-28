@@ -6,6 +6,7 @@ on:
       - '.github/workflows/zovariq-site-audit.yml'
       - '.github/scripts/site-smoke.mjs'
       - 'index.html'
+      - 'styles.css'
       - 'script.js'
       - 'privacy.html'
   workflow_dispatch:
@@ -42,6 +43,22 @@ jobs:
           console.log('LIGHTHOUSE_MOBILE ' + JSON.stringify({url:r.finalDisplayedUrl,date:r.fetchTime,score,details}));
           fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'## Mobile Lighthouse audit\n\n' + JSON.stringify({score,details},null,2)+'\n');
           NODE
+      - name: Audit proposed branch locally before any deployment
+        run: |
+          mv smoke-mobile.png smoke-live-mobile.png
+          mv smoke-desktop.png smoke-live-desktop.png
+          python3 -m http.server 8765 --bind 127.0.0.1 > preview-server.log 2>&1 &
+          sleep 2
+          SITE_URL=http://127.0.0.1:8765/ node .github/scripts/site-smoke.mjs
+          npx lighthouse http://127.0.0.1:8765/ --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage" --form-factor=mobile --output=json --output-path=lighthouse-preview-mobile.json --quiet
+          node - <<'NODE'
+          const fs = require('node:fs');
+          const r = JSON.parse(fs.readFileSync('lighthouse-preview-mobile.json','utf8'));
+          const score = Object.fromEntries(['performance','accessibility','best-practices','seo'].map(k=>[k, Math.round((r.categories[k]?.score||0)*100)]));
+          const failures = r.categories.accessibility.auditRefs.filter(ref=>ref.weight>0 && r.audits[ref.id]?.score === 0).map(ref=>({audit:ref.id, title:r.audits[ref.id].title}));
+          console.log('PREVIEW_LIGHTHOUSE ' + JSON.stringify({date:r.fetchTime,score,accessibilityFailures:failures}));
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, '\n## Proposed branch local preview\n\n' + JSON.stringify({score,accessibilityFailures:failures},null,2) + '\n');
+          NODE
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -50,4 +67,8 @@ jobs:
             lighthouse-mobile.json
             smoke-mobile.png
             smoke-desktop.png
+            smoke-live-mobile.png
+            smoke-live-desktop.png
+            lighthouse-preview-mobile.json
+            preview-server.log
           if-no-files-found: ignore
