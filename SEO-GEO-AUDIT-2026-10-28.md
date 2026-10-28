@@ -6,7 +6,7 @@
 
 ## Scope and verified baseline
 - Main branch: 9 HTML landing/service/guide URLs in sitemap.xml, all carrying self-canonical URLs and indexable robots meta.
-- robots.txt is permissive and references the sitemap.
+- The repository includes a permissive robots.txt under the project subpath, but **this is not an authoritative robots file** for Google: robots directives must be at the host origin, https://tahawar201.github.io/robots.txt. If the origin file is absent, crawling is normally permitted by default. Verify the origin separately; submit the sitemap in Search Console rather than trusting the subpath robots file.
 - Existing homepage JSON-LD: Organization and WebSite; four educational guide URLs: Article.
 - Gap identified: all four service pages lacked structured data and most share-preview metadata; four guides lacked breadcrumb structured data.
 - Connected Search Console via Windsor.ai (country-level, 13–27 October 2026): Pakistan 17 impressions/9 clicks, UAE 2/0, Germany 1/0, US 1/0, UK 0/0. Very small sample and branded US query: "zovariq". Some privacy-thresholded dimensions may be omitted.
@@ -19,7 +19,7 @@
 3. Give service pages coherent Open Graph/Twitter sharing metadata based on real page titles, descriptions and current brand logo.
 4. Give the four articles breadcrumb JSON-LD and matching logo sharing metadata; preserve existing Article publication dates.
 5. Add automated static checks for one H1, title/description, canonical, noindex, local links, sitemap coverage, JSON-LD validity and entity consistency, plus an HTTP live-page check.
-6. Preserve approved page copy, layouts and contact links. No changes to robots.txt or sitemap.xml are needed for this schema-only update.
+6. Preserve approved page copy, layouts and contact links. No changes to robots.txt or sitemap.xml are needed for this schema-only update, but the repository robots.txt is not at the host origin. Future custom-domain hosting should fix that structural limitation.
 
 ## Search Engine Optimisation: prioritised issues
 | Priority | Finding | Action |
@@ -29,7 +29,7 @@
 | High | Schema absent from service URLs | Implement scoped structured data, then test Google's Rich Results Test / Schema.org validator once deployed |
 | Medium | Share previews missing from service pages | Add supported OG/Twitter metadata with existing logo |
 | Medium | Four guide URLs lacked breadcrumb markup | Add proper BreadcrumbList based on natural home-to-guide path |
-| Medium | Need continuous link and canonical checks | Run GitHub Action on every pull request; investigate failures before merging |
+| High | Project-level robots.txt is not at origin root | Check https://tahawar201.github.io/robots.txt; a file at /zovariq-digital/robots.txt is not considered authoritative. Preserve crawl access and submit sitemap through Search Console. |\n| Medium | Need continuous link and canonical checks | Run GitHub Action on every pull request; investigate failures before merging |
 | Medium | Independent evidence of delivery not shown | Add case studies, workflows, client-approved proof and explicit citations only after real evidence/permission |
 | Medium | Existing GitHub Pages project URL is awkward for branding | Consider a custom domain when acquired, including canonical redirects and Search Console property changes carefully |
 | Low | Special GEO/AI-only files unproven | Do not add unsupported "ranking hacks", fake reviews or speculative llms.txt claims |
