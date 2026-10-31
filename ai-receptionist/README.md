@@ -11,3 +11,16 @@ This folder contains an **undeployed** Cloudflare Worker for Google Gemini's fre
 6. Only then update the frontend to use the deployed Worker URL and clearly disclose AI processing by Google. Free-tier Gemini content may be used to improve Google's products; do not submit sensitive personal data.
 
 No visitor messages are stored by this Worker code, but the AI provider processes submitted text and platform logs may exist. Do not claim compliance without review.
+
+## Free-tier launch checklist
+
+- [x] Backend prototype with server-side Gemini key and Turnstile token validation
+- [x] Reject wrong-origin requests and invalid chat message order
+- [ ] User creates/connects Cloudflare account and Turnstile widget (site key + secret)
+- [ ] User creates Gemini API key in Google AI Studio with eligible free-tier model
+- [ ] Deploy Worker and supply its public URL (not any secret) for frontend integration
+- [ ] Implement explicit consent and privacy update before sending text to Gemini
+- [ ] Add effective per-client rate limits and usage monitoring; set an operational stop condition
+- [ ] Verify end-to-end responses, mobile, lead handover and fallback before launch
+
+**Security note:** The site key is public, but the Turnstile secret and Gemini API key must only be entered in the Cloudflare dashboard. Never share secrets in GitHub or chat. Public live AI remains disabled until checks pass.
